@@ -1,0 +1,444 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* Barra de navegación */
+.navbar {
+    background: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0 10px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #007BFF;
+}
+
+.navbar .toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar .toggle i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar .toggle {
+        display: block;
+    }
+
+    .navbar .nav-links {
+        display: none; /* Ocultar menú por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #222;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .navbar.active .nav-links {
+        display: flex;
+    }
+}
+
+
+
+/* Hero */
+.hero {
+    background: url('https://source.unsplash.com/1600x900/?technology,education') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero .cta {
+    background: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero .cta:hover {
+    background: #0056b3;
+}
+
+/* Sección: Contacto */
+.contact-section {
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.contact-section p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.contact-section form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-section form input:focus,
+.contact-section form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.contact-section form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+.footer-section {
+    background-color: #222;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section strong {
+    color: #ffe066;
+}
+
+
+/* Sección dinámica general */
+.dynamic-section {
+    position: relative;
+    padding: 60px 20px;
+    background: #ffffff;
+    overflow: hidden;
+    text-align: center;
+}
+
+.dynamic-section:nth-child(even) {
+    
+    color: rgb(2, 0, 0);
+}
+
+.dynamic-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.dynamic-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Hover interactivo */
+.dynamic-section:hover {
+    background: linear-gradient(135deg, #040952, #000000);
+    transition: background 0.3s ease-in-out;
+}
+
+.dynamic-section:hover h2 {
+    color: #5ec6d8;
+    transition: color 0.3s ease-in-out;
+}
+
+.dynamic-section:hover p {
+    color: #ffffff;
+}
+
+/* Contenedor */
+.dynamic-section .container {
+    position: relative;
+}
+
+/* Elementos decorativos */
+.dynamic-section::before,
+.dynamic-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.3;
+    animation: float 6s infinite ease-in-out;
+}
+
+.dynamic-section::before {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: -10%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dynamic-section::after {
+    width: 300px;
+    height: 300px;
+    bottom: -15%;
+    right: -20%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-20px, 20px);
+    }
+}
+
+
+
+
+
+/* Portada */
+.portada {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('materializacion-de-las-ventajas-de-la-tecnologia-en-la-educacion.webp') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.portada .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.portada .content {
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.portada h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: slideInDown 1.5s ease-out;
+}
+
+.portada p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.portada .btn-portada {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: slideInUp 2s ease-out;
+}
+
+.portada .btn-portada:hover {
+    background: linear-gradient(135deg, #0056b3, #007BFF);
+    transform: scale(1.1);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .portada h1 {
+        font-size: 2rem;
+    }
+
+    .portada p {
+        font-size: 1rem;
+    }
+
+    .portada .btn-portada {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .dynamic-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .dynamic-section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portada {
+        height: 70vh;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar .logo {
+        font-size: 1.2rem;
+    }
+}
+.portada {
+    background-size: cover;
+    background-position: center;
+}
+

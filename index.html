@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Informe de investigación sobre el impacto de la tecnología en la educación. Incluye análisis, resultados y conclusiones relevantes.">
+    <meta name="keywords" content="tecnología, educación, investigación, impacto tecnológico">
+    <meta name="author" content="Tu Nombre">
+    <title>Informe de Investigación | Tecnología en Educación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons8-educational-technology-32.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="logo">Visión tecnológica</div>
+        <div class="menu-container">
+            <ul class="nav-links">
+                <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#introduccion"><i class="fas fa-book"></i> Introducción</a></li>
+                <li><a href="#metodologia"><i class="fas fa-chart-line"></i> Metodología</a></li>
+                <li><a href="#resultados"><i class="fas fa-trophy"></i> Resultados</a></li>
+                <li><a href="#conclusion"><i class="fas fa-check-circle"></i> Conclusión</a></li>
+                <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+            <div class="toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Portada -->
+    <div class="portada">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Informe de Investigación</h1>
+            <p>Explorando el impacto de las tecnologías modernas en la educación.</p>
+            <a href="#introduccion" class="btn-portada">Comenzar</a>
+        </div>
+    </div>
+
+    <!-- Secciones dinámicas -->
+    <section id="introduccion" class="dynamic-section">
+        <div class="container">
+            <h2>Introducción</h2>
+            <p>El desarrollo tecnológico y educativo ha experimentado un avance acelerado en las últimas décadas, impulsado por la digitalización, la automatización y las nuevas herramientas interactivas. Este estudio explora cómo estas innovaciones están transformando el panorama de la educación, tanto en términos de acceso como de Calidad a lo largo de este trabajo, se analiza la implementación de tecnologías digitales en diversas plataformas educativas, y se examinan los beneficios y desafíos asociados.</p>
+        </div>
+    </section>
+
+    <section id="metodologia" class="dynamic-section">
+        <div class="container">
+            <h2>Metodología</h2>
+            <p>Para realizar este estudio, se adoptó un enfoque cualitativo, basado en el análisis de plataformas educativas innovadoras y el seguimiento de su uso entre estudiantes y educadores. Se recopiló información mediante encuestas, entrevistas y análisis de casos de estudio en diversas instituciones educativas. Además , se evaluaron los recursos tecnológicos utilizados, su integración en los métodos de enseñanza, y los resultados obtenidos a partir de su implementación.</p>
+        </div>
+    </section>
+
+    <section id="resultados" class="dynamic-section">
+        <div class="container">
+            <h2>Resultados</h2>
+            <p>Los resultados muestran una mejora significativa en la participación y rendimiento de los estudiantes que utilizan plataformas digitales para su aprendizaje. El 85% de los estudiantes encuestados reportaron una mayor satisfacción con los métodos de enseñanza interactiva. Además, los profesores indicaron que las herramientas tecnológicas permitieron personalizar la enseñanza y hacerla más accesible. Sin embargo, también se identifican algunos desafíos, como la brecha digital en áreas rurales y la falta de capacitación en el uso de algunas plataformas.</p>
+        </div>
+    </section>
+
+    <section id="conclusion" class="dynamic-section">
+        <div class="container">
+            <h2>Conclusión</h2>
+            <p>En conclusión, la incorporación de la tecnología en la educación ha demostrado ser un factor clave para mejorar el acceso y la calidad del aprendizaje. Sin embargo, para aprovechar completamente sus beneficios, es crucial abordar los desafíos existentes, como la capacitación de educadores y La superación de las brechas tecnológicas. El futuro de la educación parece estar intrínsecamente vinculado a la evolución tecnológica, y su integración exitosa dependerá de una planificación cuidadosa y un compromiso continuo con la innovación.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contact-section">
+        <h2>Contacto</h2>
+        <p>Si deseas más información sobre esta investigación, por favor completa el siguiente formulario:</p>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Créditos -->
+    <footer class="footer-section">
+        <p>&copy; 2024 | Investigación presentada por el <strong>Liceo Matías Ramón Mella</strong>.</p>
+        <p>Creado por estudiantes comprometidos con la excelencia educativa.</p>
+    </footer>
+
+    <script>
+        // Animaciones con GSAP
+        gsap.from(".navbar", { y: -100, opacity: 0, duration: 1 });
+        gsap.from(".hero .title", { y: 50, opacity: 0, duration: 1 });
+        gsap.from(".hero .cta", { scale: 0.5, opacity: 0, duration: 1, delay: 0.5 });
+        gsap.from(".section", { opacity: 0, y: 100, stagger: 0.3, duration: 1 });
+
+        // Toggle del menú
+const toggle = document.querySelector('.toggle');
+const navbar = document.querySelector('.navbar');
+toggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
+    </script>
+</body>
+</html>
